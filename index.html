@@ -146,6 +146,7 @@
             padding: 4px;
             background: var(--accent-gradient);
             box-shadow: 0 0 30px rgba(255, 123, 0, 0.2);
+            overflow: hidden;
         }
 
         .hero-frame img {
@@ -207,6 +208,7 @@
             border-radius: 50%;
             padding: 4px;
             background: var(--accent-gradient);
+            overflow: hidden;
         }
 
         .about-frame img {
@@ -273,15 +275,13 @@
             background-color: #0a0a0a;
             border: 1px solid var(--card-border);
             border-radius: 16px;
-            padding: 3rem;
+            padding: 4rem 2rem;
             margin-top: 2rem;
-            position: relative;
-            overflow: hidden;
         }
 
         .showreel-banner h3 {
             font-family: 'Cinzel', serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
             letter-spacing: 1px;
         }
@@ -293,21 +293,6 @@
             font-weight: 600;
             letter-spacing: 2px;
             margin-bottom: 2rem;
-        }
-
-        .showreel-placeholder-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .showreel-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #222;
         }
 
         /* Featured Work Grid Section */
@@ -327,99 +312,75 @@
             border: 1px solid var(--card-border);
             border-radius: 16px;
             overflow: hidden;
-            position: relative;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             transition: transform 0.3s;
         }
 
         .work-card:hover {
             transform: scale(1.02);
+            border-color: var(--accent-color);
         }
 
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-top: 177.77%; /* 9:16 Aspect Ratio */
-            background-color: #000;
-        }
-
-        .video-container iframe, .video-container video, .video-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            object-fit: cover;
-        }
-
-        .play-button-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 123, 0, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(255, 123, 0, 0.5);
-        }
-
-        .play-icon {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 16px solid white;
-            margin-left: 4px;
+        .video-box-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .video-info {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-hint {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* Contact Section */
+        #contact {
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+        }
+
+        .contact-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 2.5rem;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-control {
+            width: 100%;
+            background-color: var(--input-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1rem;
+            color: #fff;
+            font-family: inherit;
 Use code with caution.
-padding: 1rem;
-font-size: 0.9rem;
-font-weight: 500;
-background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-position: absolute;
-bottom: 0;
-width: 100%;
-}
-/* Contact Section */
-#contact {
-border-top: 1px solid var(--card-border);
-text-align: center;
-}
-.contact-subtitle {
-font-size: 1.1rem;
-opacity: 0.8;
-margin-bottom: 2rem;
-max-width: 600px;
-margin-left: auto;
-margin-right: auto;
-}
-.contact-form-container {
-max-width: 600px;
-margin: 0 auto;
-background-color: var(--card-bg);
-border: 1px solid var(--card-border);
-padding: 2.5rem;
-border-radius: 16px;
-}
-.form-group {
-margin-bottom: 1.5rem;
-text-align: left;
-}
-.form-control {
-width: 100%;
-background-color: var(--input-bg);
-border: 1px solid var(--card-border);
-border-radius: 8px;
-padding: 1rem;
-color: #fff;
-font-family: inherit;
 font-size: 0.95rem;
 transition: border-color 0.3s;
 }
@@ -439,7 +400,7 @@ margin-top: 3rem;
 }
 .social-icon {
 color: #fff;
-font-size: 1.5rem;
+font-size: 1rem;
 text-decoration: none;
 opacity: 0.7;
 transition: opacity 0.3s, color 0.3s;
@@ -471,18 +432,12 @@ display: flex;
 flex-direction: column;
 align-items: center;
 }
-.skills-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-.showreel-placeholder-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-.work-grid {
+.skills-grid, .work-grid {
 grid-template-columns: repeat(2, 1fr);
 }
 }
 @media (max-width: 600px) {
-.skills-grid, .work-grid, .showreel-placeholder-grid {
+.skills-grid, .work-grid {
 grid-template-columns: 1fr;
 }
 header {
@@ -524,37 +479,27 @@ Skills & Tools
  Photoshop
  Canva
  Jitter
- Pexels
- Pixabay
+ Premiere Pro
+ After Effects
 
 
 Showreels
 
 VICINITY VIRAL
-Video Editor
+Video Editor portfolio
 Get In Touch
 
 Featured Work
+🎬
 Raw Edit #videoediting
-
+[Video embed coming soon]
+✨
 Sample Edit #transitions
-
+[Video embed coming soon]
+💼
 Client Project #socialmedia
-
-Fun Promo Edit
-
-Real Estate Highlight
-
-Brand Campaign #viral
-
+[Video embed coming soon]
 Let's Work Together
 
 Ready to take your content to the next level? Whether it's viral reels, social media promos, or clean, engaging edits, I can help bring your ideas to life. Send me a message!
 Send Message
-
-Facebook
-Instagram
-TikTok
-LinkedIn
-
-© 2026 Vicinity Viral. All rights reserved.
